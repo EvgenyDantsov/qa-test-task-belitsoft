@@ -1,18 +1,19 @@
-📌 ## Описание проекта
+## Описание проекта
 
 В данном проекте реализованы автотесты для проверки функциональности drag-and-drop с использованием Playwright и TypeScript.
 
-📌 ## Описание проекта
+## Описание проекта
 
 В данном проекте реализованы автотесты для проверки функциональности drag-and-drop с использованием Playwright и TypeScript.
 
-🚀 ## Технологии
+## Технологии
 - Playwright
 - TypeScript
 - Node.js
 - Page Object Model (POM)
 
 📂 Структура проекта
+```text
 ├── pages/
 │   ├── DragabblePage.ts
 │   ├── DroppablePage.ts
@@ -25,8 +26,9 @@
 │
 ├── playwright.config.ts
 └── README.md
-
-✅ Покрытый функционал
+```
+---
+## Покрытый функционал
 🔹 Страница Draggable
 1. Simple
 Проверка, что элемент можно перетаскивать
@@ -46,7 +48,7 @@ wrapper контейнера
 верхний левый угол → crosshair
 низ → auto
 Дополнительно проверяется, что элемент действительно перемещается
-
+---
 🔹 Страница Droppable
 1. Simple
 Успешный drop
@@ -67,24 +69,39 @@ Greedy:
 4. Revert Draggable
 Элемент с возвратом возвращается в исходную позицию
 Элемент без возврата остаётся в зоне drop
-
+---
 ⚙️ Установка и настройка
 1. Установка зависимостей
-```bash npm install ```
-2. Установка браузеров Playwright
-```bash npx playwright install ```
+```bash
+npm install
+```
+3. Установка браузеров Playwright
+```bash
+npx playwright install
+```
 ▶️ Запуск тестов
 Запуск всех тестов 
-```bas npx playwright test ```
+```bash
+npx playwright test
+```
 Запуск конкретного файла
-```bash npx playwright test tests/droppable.spec.ts ```
+```bash 
+npx playwright test tests/droppable.spec.ts
+```
 Запуск по названию теста
-```bash npx playwright test -g "Accept Tab" ```
+```bash 
+npx playwright test -g "Accept Tab"
+```
 Просмотр отчёта
-```bash npx playwright show-report ```
-
+```bash 
+npx playwright show-report
+```
+---
 ⚠️ Важно при первом запуске
-Убедитесь, что браузеры установлены (npx playwright install)
+Убедитесь, что браузеры установлены:
+```bash
+npx playwright install
+```
 При падении тестов в headless режиме:
 проверьте настройки viewport
 Некоторые тесты зависят от координат перетаскивания → важно стабильное разрешение экрана
