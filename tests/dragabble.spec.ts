@@ -61,6 +61,7 @@ test.describe('Draggable Page', () => {
 
         test('Drag within parent container does not leave it', async () => {
             await dragabblePage.dragBoxParentContainer(100, 50);
+            expect(await dragabblePage.isInsideContainer(dragabblePage.restrictedParentDragBox, dragabblePage.containerParentBox)).toBeTruthy();
         });
     });
     // Тесты для вкладки Cursor Style
