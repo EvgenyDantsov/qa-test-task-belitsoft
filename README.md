@@ -13,12 +13,14 @@
 ├── pages/
 │   ├── DragabblePage.ts
 │   ├── DroppablePage.ts
+│   ├── ElementsPage.ts
 │   ├── HomePage.ts
 │   └── InteractionsPage.ts
 │
 ├── tests/
 │   ├── dragabble.spec.ts
-│   └── droppable.spec.ts
+│   ├── droppable.spec.ts
+│   └── elements.spec.ts
 │
 ├── playwright.config.ts
 └── README.md
@@ -65,6 +67,56 @@ Greedy:
 4. Revert Draggable
 Элемент с возвратом возвращается в исходную позицию
 Элемент без возврата остаётся в зоне drop
+---
+🔹 Страница Elements
+1. Text Box
+Валидные данные — проверка корректного отображения введённых данных в output-блоке
+Unicode данные — поддержка кириллицы и спецсимволов
+Пустой email — форма отправляется без ошибок, email не отображается в output
+Невалидный email — проверка подсветки поля как ошибочного (красная рамка)
+2. Check Box
+Выбор одного элемента — React
+Выбор родительского узла — Desktop (автоматический выбор всех дочерних элементов: Notes, Commands)
+Выбор нескольких элементов — React + Angular
+Снятие выделения — проверка, что повторный клик убирает галочку
+
+Предварительное раскрытие дерева: Home → Desktop → Documents → WorkSpace
+3. Radio Button
+Yes — отображение сообщения "Yes"
+Impressive — отображение сообщения "Impressive"
+No (disabled) — проверка, что кнопка заблокирована и не кликабельна
+4. Web Tables
+Добавление записи:
+Успешное добавление с валидными данными
+Пустое имя — форма не отправляется
+Невалидный email — форма не отправляется
+Поиск (фильтрация):
+Проверка, что после поиска отображается только одна соответствующая запись
+Удаление записи:
+Проверка, что запись исчезает из таблицы после удаления
+Редактирование записи:
+Изменение всех полей, проверка что старые данные заменены новыми
+5. Buttons
+Double Click — проверка сообщения "You have done a double click"
+Right Click — проверка сообщения "You have done a right click"
+Dynamic Click — проверка сообщения "You have done a dynamic click"
+6. Links
+Ссылки, открывающие новую вкладку:
+Simple Link → URL содержит /demoqa
+Dynamic Link → URL содержит /demoqa
+API-ссылки (без открытия новой вкладки):
+Проверка корректных статус-кодов и сообщений:
+Created → 201 Created
+No Content → 204 No Content
+Moved → 301 Moved Permanently
+Bad Request → 400 Bad Request
+Unauthorized → 401 Unauthorized
+Forbidden → 403 Forbidden
+Not Found → 404 Not Found
+7. Dynamic Properties
+Enable After — кнопка становится активной через 5 секунд
+Color Change — проверка изменения цвета кнопки с течением времени
+Visible After — кнопка появляется через 5 секунд (изначально скрыта)
 ---
 ⚙️ Установка и настройка
 1. Установка зависимостей
