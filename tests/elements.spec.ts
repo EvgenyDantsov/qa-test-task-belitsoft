@@ -1,6 +1,5 @@
 import { test, expect } from '@playwright/test';
 import { HomePage } from '../pages/HomePage';
-import { InteractionsPage } from '../pages/InteractionsPage';
 import { ElementsPage } from '../pages/ElementsPage';
 
 test.describe('Elements tab tests', () => {
