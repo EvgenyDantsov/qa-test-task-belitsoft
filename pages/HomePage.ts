@@ -1,11 +1,15 @@
 import { Page, Locator } from '@playwright/test';
+
 export class HomePage {
     readonly page: Page;
     readonly interactionsLink: Locator;
+    readonly elementsLink: Locator;
 
     constructor(page: Page) {
         this.page = page;
-        this.interactionsLink = page.locator('text=Interactions'); // ссылка на раздел Interactions
+        
+        this.elementsLink = page.locator('a[href="/elements"]');
+        this.interactionsLink = page.locator('a[href="/interaction"]');
     }
 
     async goto() {
@@ -13,6 +17,10 @@ export class HomePage {
     }
 
     async clickInteractions() {
-        await this.interactionsLink.click();
+        await this.interactionsLink.click({ force: true });
+    }
+
+    async clickElements() {
+        await this.elementsLink.click({ force: true });
     }
 }
